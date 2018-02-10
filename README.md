@@ -8,9 +8,7 @@ Build/run containers:
     $ docker-compose up -d 
     $ docker-compose exec app composer install
 
-Run application:
-
-    http://localhost:8000/ip2geo?ip=8.8.8.8
+Run application: http://localhost:8000/ip2geo?ip=8.8.8.8
     
 or
 
