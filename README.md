@@ -12,6 +12,6 @@ Run application: http://localhost:8000/ip2geo?ip=8.8.8.8
     
 or
 
-    curl --request GET \
+    $ curl --request GET \
       --url 'http://localhost:8000/ip2geo?ip=8.8.8.8'
       
