@@ -2,10 +2,11 @@
 
 Build/run containers:
 
+    $ git clone git@github.com:taras-by/ip2geo.git
+    $ cd ip2geo
     $ docker-compose build
     $ docker-compose up -d 
     $ docker-compose exec app composer install
-    $ chmod 777 var/cache 
 
 Run application:
 
