@@ -39,16 +39,16 @@ class Response
 
     /**
      * @param $status
-     * @param $mesage
+     * @param $message
      * @return Response
      */
-    public function error($status, $mesage): Response
+    public function error($status, $message): Response
     {
-        $this->setHeader('HTTP/1.0 '.$status.' ' . $mesage);
+        $this->setHeader('HTTP/1.0 '.$status.' ' . $message);
 
         $this->body = json_encode([
             'status' => $status,
-            'message' => $mesage,
+            'message' => $message,
         ]);
         return $this;
     }
