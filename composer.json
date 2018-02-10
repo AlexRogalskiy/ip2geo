@@ -1,6 +1,6 @@
 {
-  "name": "tarasby/ip2geo",
-  "description": "Geolocation API",
+  "name": "taras-by/ip2geo",
+  "description": "IP geolocation service",
   "type": "project",
   "authors": [
     {

@@ -1,9 +1,6 @@
 <?php
 
-define('ROOT', realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR);
-define('APP', ROOT . 'app' . DIRECTORY_SEPARATOR);
-define('CACHE', ROOT . 'var' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR);
-
+require_once __DIR__ . '/../app/Defines.php';
 require_once ROOT . '/vendor/autoload.php';
 
 use App\Controllers\FrontController;

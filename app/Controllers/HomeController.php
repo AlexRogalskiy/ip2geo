@@ -10,11 +10,13 @@ use App\Services\Ip2Geo\Ip2GeoCaching;
 use App\Services\Ip2Geo\IpNotFoundException;
 use App\Services\Response;
 
-
 class HomeController extends Controller
 {
-    const CACHE_TIME = 1800; // 30 min
-    const NUMBER_OF_REQUESTS = 3;
+    /**
+     * Time to live. 30 min
+     */
+    const CACHE_TTL = 1800;
+    const NUMBER_OF_ATTEMPTS = 3;
 
     /**
      * @return Response
@@ -22,8 +24,8 @@ class HomeController extends Controller
     public function index()
     {
         $ip = new Ip2GeoFromApi($this->request->get['ip']);
-        $IpRepeated = new Ip2GeoRepeating($ip, self::NUMBER_OF_REQUESTS);
-        $IpCached = new Ip2GeoCaching($IpRepeated, new FileCache(), self::CACHE_TIME);
+        $IpRepeated = new Ip2GeoRepeating($ip, self::NUMBER_OF_ATTEMPTS);
+        $IpCached = new Ip2GeoCaching($IpRepeated, new FileCache(), self::CACHE_TTL);
 
         try {
             return $this->response->view($IpCached->getGeo());
