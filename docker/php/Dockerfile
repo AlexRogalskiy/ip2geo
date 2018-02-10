@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
@@ -11,4 +11,7 @@ RUN apt-get update \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
 
-WORKDIR /app
+# Change uid and gid to docker user uid/gid
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+
+WORKDIR /var/www
