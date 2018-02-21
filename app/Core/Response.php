@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Core;
 
 class Response
 {
-    private $headers = ['Content-Type: application/json'];
+    private $headers = [];
     private $body;
 
     public function send()
@@ -33,7 +33,6 @@ class Response
     public function notFound(): Response
     {
         $this->error(404, 'Not Found');
-
         return $this;
     }
 
@@ -45,7 +44,6 @@ class Response
     public function error($status, $message): Response
     {
         $this->setHeader('HTTP/1.0 '.$status.' ' . $message);
-
         $this->body = json_encode([
             'status' => $status,
             'message' => $message,

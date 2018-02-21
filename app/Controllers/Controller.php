@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-use App\Services\Request;
-use App\Services\Response;
+
+use App\Core\Request;
+use App\Core\Response;
 
 class Controller
 {

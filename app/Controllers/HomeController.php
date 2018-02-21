@@ -19,7 +19,7 @@ class HomeController extends Controller
     const NUMBER_OF_ATTEMPTS = 3;
 
     /**
-     * @return Response
+     * @return \App\Core\Response
      */
     public function index()
     {
