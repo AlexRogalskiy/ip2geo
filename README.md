@@ -6,7 +6,7 @@ Build/run containers:
     $ cd ip2geo
     $ docker-compose build
     $ docker-compose up -d 
-    $ docker-compose exec app composer install
+    $ docker-compose exec --user="www-data" app composer install
 
 Run application: http://localhost:8000/ip2geo?ip=8.8.8.8
     

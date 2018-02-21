@@ -1,7 +1,5 @@
 FROM php:7.2-fpm
 
-ENV COMPOSER_ALLOW_SUPERUSER 1
-
 RUN apt-get update \
 	&& apt-get install -y \
 		curl \
@@ -15,3 +13,4 @@ RUN composer --version
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 WORKDIR /var/www
+ENV COMPOSER_HOME /var/www/docker/php/.composer
